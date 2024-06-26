@@ -36,7 +36,7 @@ fun EmailSection() {
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.fillMaxWidth()
         ) {
-            Label(icon = Icons.Default.Email, text = "学生メール")
+            Label(vector = Icons.Default.Email, text = "学生メール")
 
             Spacer(modifier = Modifier.width(10.dp))
 

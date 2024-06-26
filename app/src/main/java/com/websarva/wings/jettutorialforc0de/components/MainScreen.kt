@@ -1,5 +1,8 @@
 package com.websarva.wings.jettutorialforc0de.components
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -18,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -33,7 +37,7 @@ fun MainScreen(
     Column(
         horizontalAlignment = Alignment.CenterHorizontally, //要素を中央に並べる
         modifier = Modifier //要素の修飾に用いる
-            .padding(20.dp) //Columnの周りに余白を設定
+            .padding(top = 50.dp, start = 20.dp, end = 20.dp) //Columnの周りに余白を設定
             .verticalScroll(rememberScrollState()) //縦スクロールを可能にする
     ) {
         //プロフィール画像
