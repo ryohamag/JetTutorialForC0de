@@ -56,5 +56,9 @@ fun MainScreen() {
             color = Color.Gray, //文字色を設定
             fontSize = 16.sp, //文字サイズを設定(原則spを用いる)
         )
+
+        Spacer(modifier = Modifier.size(20.dp))
+
+        DepartmentSection()
     }
 }
