@@ -13,6 +13,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.websarva.wings.jettutorialforc0de.components.DetailScreen
 import com.websarva.wings.jettutorialforc0de.components.MainScreen
 import com.websarva.wings.jettutorialforc0de.ui.theme.JetTutorialForC0deTheme
 
@@ -22,11 +26,21 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetTutorialForC0deTheme {
+                val navController = rememberNavController() //NavControllerのインスタンスを生成(とりあえず必要)
                 Surface (
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainScreen()
+                    //遷移先を管理
+                    NavHost(navController = navController, startDestination = "MainScreen") {
+                        composable(route = "MainScreen") {
+                            MainScreen(navController)
+                        }
+                        //DetailScreenが指定された場合は、DetailScreen()を呼び出す
+                        composable(route = "DetailScreen") {
+                            DetailScreen()
+                        }
+                    }
                 }
             }
         }
