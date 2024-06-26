@@ -48,7 +48,7 @@ fun MainScreen() {
             fontWeight = FontWeight.Bold //文字の太さを設定
         )
 
-        Spacer(modifier = Modifier.size(20.dp))
+        Spacer(modifier = Modifier.size(10.dp))
 
         //学年
         Text(
@@ -59,6 +59,12 @@ fun MainScreen() {
 
         Spacer(modifier = Modifier.size(20.dp))
 
+        //学科、分野/クラスを表示するコンポーネントを呼び出す
         DepartmentSection()
+
+        Spacer(modifier = Modifier.size(20.dp))
+
+        //メールアドレスを表示するコンポーネントを呼び出す
+        EmailSection()
     }
 }
