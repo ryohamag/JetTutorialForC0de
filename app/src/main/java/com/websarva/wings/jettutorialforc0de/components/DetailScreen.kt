@@ -71,6 +71,44 @@ fun DetailScreen() {
                 text = "所属団体：C0de,NITMic,準硬式野球部"
             )
         }
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        val context = LocalContext.current
+        Button(
+            onClick = { openTwitter(context) },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(
+                text = "Twitterを開く",
+                color = Color.White
+            )
+        }
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        Button(
+            onClick = { openGithub(context) },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(
+                text = "Githubを開く",
+                color = Color.White
+            )
+        }
     }
 }
 
+fun openTwitter(context: Context) {
+    val intent = Intent(Intent.ACTION_VIEW).apply {
+        data = Uri.parse("https://twitter.com/ryo_hamag")
+    }
+    context.startActivity(intent)
+}
+
+fun openGithub(context: Context) {
+    val intent = Intent(Intent.ACTION_VIEW).apply {
+        data = Uri.parse("https://github.com/ryohamag")
+    }
+    context.startActivity(intent)
+}
