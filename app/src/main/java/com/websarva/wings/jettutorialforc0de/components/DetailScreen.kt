@@ -53,14 +53,14 @@ fun DetailScreen() {
             Spacer(modifier = Modifier.height(10.dp))
 
             Label(
-                vector = Icons.Default.LocationOn,
+                icon = Icons.Default.LocationOn,
                 text = "出身地：愛知県"
             )
 
             Spacer(modifier = Modifier.height(10.dp))
 
             Label(
-                vector = Icons.Default.Favorite,
+                icon = Icons.Default.Favorite,
                 text = "趣味：野球,ゲーム,ギター"
             )
 

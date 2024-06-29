@@ -17,14 +17,26 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun Label(vector: ImageVector, text: String, color: Color = Color.Gray){
+fun Label(
+    icon: ImageVector? = null,
+    painter: Painter? = null,
+    text: String,
+    color: Color = Color.Gray
+){
     Row(
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Icon(
-            imageVector = vector, //アイコンの指定
-            contentDescription = null, //アイコンの説明(nullでも良い)
-        )
+        if (icon != null) {
+            Icon(
+                imageVector = icon, //アイコンの指定
+                contentDescription = null, //アイコンの説明(nullでも良い)
+            )
+        } else if (painter != null) {
+            Icon(
+                painter = painter,
+                contentDescription = null,
+            )
+        }
 
         Spacer(modifier = Modifier.width(10.dp))
 
