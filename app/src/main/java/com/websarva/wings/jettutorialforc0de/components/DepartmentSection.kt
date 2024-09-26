@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.sp
 fun DepartmentSection() {
     Column(
         horizontalAlignment = Alignment.Start, //要素を左寄せにする(右寄せは.End)
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth() //大外枠(MainScreen.ktのColumn)に合わせる
     ) {
         //学科名
         Text(

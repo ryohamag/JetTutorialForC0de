@@ -31,11 +31,11 @@ fun DetailScreen() {
         horizontalAlignment = Alignment.Start,
         modifier = Modifier.padding(top = 50.dp, start = 20.dp, end = 20.dp)
     ) {
-        Column(
+        Column( //ここが要素を囲んでいる枠の部分(Columnの範囲が可視化されたイメージ)
             modifier = Modifier
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(10.dp))
-                .background(Color.LightGray.copy(alpha = 0.3f))
+                .background(Color.LightGray.copy(alpha = 0.3f)) //ここで背景色を設定(設定しなければ透明)
                 .padding(horizontal = 10.dp, vertical = 20.dp)
         ) {
             Label(
@@ -74,6 +74,7 @@ fun DetailScreen() {
 
         Spacer(modifier = Modifier.height(20.dp))
 
+        //アプリ外部にアクセスするために必要
         val context = LocalContext.current
         Button(
             onClick = { openTwitter(context) },
@@ -101,7 +102,7 @@ fun DetailScreen() {
 
 fun openTwitter(context: Context) {
     val intent = Intent(Intent.ACTION_VIEW).apply {
-        data = Uri.parse("https://twitter.com/ryo_hamag")
+        data = Uri.parse("https://twitter.com/ryo_hamag") //ここでURLを指定する
     }
     context.startActivity(intent)
 }
