@@ -20,12 +20,13 @@ import androidx.compose.ui.unit.sp
 fun Label(
     icon: ImageVector? = null,
     painter: Painter? = null,
-    text: String,
-    color: Color = Color.Gray
+    text: String, //表示するテキストを指定
+    color: Color = Color.Gray //テキストの色を指定(初期値は灰色)
 ){
     Row(
         verticalAlignment = Alignment.CenterVertically
     ) {
+        //実はIcon関数には引数の取り方が複数あり......(今回は割愛)
         if (icon != null) {
             Icon(
                 imageVector = icon, //アイコンの指定
@@ -41,29 +42,8 @@ fun Label(
         Spacer(modifier = Modifier.width(10.dp))
 
         Text(
-            text = text,
-            color = color,
-            fontSize = 14.sp,
-            fontWeight = FontWeight.Bold
-        )
-    }
-}
-
-@Composable
-fun Label(painter: Painter, text: String, color: Color = Color.Gray){
-    Row(
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Icon(
-            painter = painter, //アイコンの指定
-            contentDescription = null, //アイコンの説明(nullでも良い)
-        )
-
-        Spacer(modifier = Modifier.width(10.dp))
-
-        Text(
-            text = text,
-            color = color,
+            text = text, //関数に代入したテキストが表示される
+            color = color, //代入した色が適用される(特に指定が無ければ灰色になる)
             fontSize = 14.sp,
             fontWeight = FontWeight.Bold
         )

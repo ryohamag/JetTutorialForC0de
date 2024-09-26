@@ -62,6 +62,7 @@ fun EmailSection() {
 
             Spacer(modifier = Modifier.height(5.dp))
 
+            //区切り線
             HorizontalDivider(
                 modifier = Modifier.clip(RoundedCornerShape(1000.dp)),
                 thickness = 2.dp

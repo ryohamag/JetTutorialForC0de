@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.websarva.wings.jettutorialforc0de.R
 
+//UIを作る関数なので@Composableを付ける
 @Composable
 fun MainScreen(
     navController: NavController
@@ -34,7 +35,7 @@ fun MainScreen(
         modifier = Modifier //要素の修飾に用いる
             .padding(top = 50.dp, start = 20.dp, end = 20.dp) //Columnの周りに余白を設定
             .verticalScroll(rememberScrollState()) //縦スクロールを可能にする
-    ) {
+    ) { //ここにUIを構成する関数を並べていく
         //プロフィール画像
         Image(
             painter = painterResource(id = R.drawable.image_profile), //画像の指定
